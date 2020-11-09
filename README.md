@@ -163,3 +163,8 @@ device_tracker:
       track_new_devices: false
       hide_if_away: true
 ```
+
+# Docker
+To build docker image run `docker build -f Dockerfile -t ha-airport-rsyslog .`
+To run rsyslog in docker run smth like this `docker run --rm -it -p 514:514/udp -e HA_HOST=my_home_assistant_host -e HA_PORT=my_home_assistant_port -e HA_TOKEN=My_Long-Lived_Access_Token --name rsyslog rsyslog`
+To create long-lived token use home assistant cotrol panel or read https://developers.home-assistant.io/docs/auth_api/#long-lived-access-token.
